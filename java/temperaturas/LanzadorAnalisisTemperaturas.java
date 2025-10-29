@@ -4,7 +4,7 @@ public class LanzadorAnalisisTemperaturas {
 	
 	private final static String directorioGenerarClasses= "target\\";
 	private final static String rutaFicherosJava = "src\\main\\java\\temperaturas\\AnalizadorTemperaturas.java";
-
+	private static String rutaTxt = "src\\main\\resources\\temperaturas.txt";
 
 	public static void main (String[] args) {
 		LanzadorAnalisisTemperaturas L = new LanzadorAnalisisTemperaturas();
@@ -12,7 +12,7 @@ public class LanzadorAnalisisTemperaturas {
 
 		L.compila();
 		for (int i : umbrales) {
-			L.ejecuta(String.valueOf(i));
+			L.ejecuta(String.valueOf(i),rutaTxt);
 		}
 	}
 	
@@ -40,8 +40,8 @@ public class LanzadorAnalisisTemperaturas {
 		}
 	}
 	
-	public void ejecuta(String i) {
-		String[] comando = {"java","-cp",directorioGenerarClasses,"temperaturas.AnalizadorTemperaturas",i}; 
+	public void ejecuta(String i, String j) {
+		String[] comando = {"java","-cp",directorioGenerarClasses,"temperaturas.AnalizadorTemperaturas",i ,j}; 
 		ProcessBuilder pb = new ProcessBuilder(comando);
 
 				try {

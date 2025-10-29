@@ -10,18 +10,19 @@ import java.util.Scanner;
 
 public class AnalizadorTemperaturas {
 
-	private static String rutaTxt = "src\\main\\resources\\temperaturas.txt";
+	
 
 	public static void main(String[] args) throws FileNotFoundException {
 		int umbral = Integer.parseInt(args[0]);
+		String rutaTxt = args[1];
 		AnalizadorTemperaturas t = new AnalizadorTemperaturas();
-		t.crearFicheroTemp();
+		t.crearFicheroTemp(rutaTxt);
 		t.CalcularDiasCalor(rutaTxt, umbral);
 
 	}
 
 	// crear fichero
-	public void crearFicheroTemp() {
+	public void crearFicheroTemp(String rutaTxt) {
 		PrintWriter out = null;
 		File f = new File(rutaTxt); 
 		if (!f.exists()) {
