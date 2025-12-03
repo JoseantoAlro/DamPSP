@@ -8,7 +8,7 @@ public class CuentaVocales {
 		super();
 	}
 
-	public synchronized int getVocalesTotales() {
+	public int getVocalesTotales() {
 		return vocalesTotales;
 	}
 
